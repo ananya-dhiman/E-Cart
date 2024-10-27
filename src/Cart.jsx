@@ -2,34 +2,33 @@ import styles from "./styles/Cart.module.css"
 import { useState,useContext,useEffect } from "react";
 import { Header } from "./Components/Header";
 import { Footer } from "./Components/Footer";
-import { MainContext } from "./Components/Info";
+import { MainContext } from "./Components/Api";
 import {Loader} from "./Components/Loader";
 
 
 export function Cart(){
+   
     const list=useContext(MainContext);
+
     const [loader,setLoader]=useState(true);
     useEffect(()=>{
        
         if(list.length>0){
 
-            setLoader(false);
-            console.log(list);
+        setLoader(false);
+             console.log("List is : ",list);
     
-        }
+         }
     
-    },[list]);
+     },[list]);
   
   
-//    const addition=(p)=>{
-//     p.count=p.count+1;
-
-
-//    }    
-//    const sub=(p)=>{
-//     p.count=p.count-1;
-
-//    }    
+    const addition=(p)=>{
+     p.count=p.count+1;
+     }    
+    const sub=(p)=>{
+        p.count=p.count-1;
+    }    
 
 
  
@@ -37,9 +36,9 @@ export function Cart(){
     return(
         <>
        
-      {loader? <Loader />:
-        <>
+   
          <Header/>
+         
         
 
         {list.filter(product =>product.count>0).map(avail=>(
@@ -63,8 +62,7 @@ export function Cart(){
 
         
             <Footer/>
-        </>
-    }
+    
         </>
 
     );
