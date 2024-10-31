@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+import { StrictMode,useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import {
@@ -8,7 +8,8 @@ import {
 import {Landing}  from './Landing'
 import { Product } from './Products'
 import { Cart } from './Cart'
-
+import { CartProvider } from './CartContext';
+import { Api } from './Api';
 const router=createBrowserRouter([
   {
     path:"/",
@@ -23,14 +24,19 @@ const router=createBrowserRouter([
     element:<Cart/>
   },
  
-
 ]);
+
+
+  
+
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <>
-    <RouterProvider router={router} />
+    <CartProvider>
+      <RouterProvider router={router} />
+    </CartProvider>
    
     
  

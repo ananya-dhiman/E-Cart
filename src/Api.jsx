@@ -1,14 +1,13 @@
-import React,{ useState, useEffect,createContext } from "react";
+import React,{ useState, useEffect,useContext } from "react";
 import { fetchProducts} from "./Fetch";
-import { Info } from "./Components/Info";
-import {Loader} from "./Components/Loader";
+import CartContext from "./CartContext";
 
-export const MainContext=createContext([]);
 
 export const Api = () => { 
   const [mprolist,setMprolist]=useState([]);
   const [wprolist,setWprolist]=useState([]);
-  const [loading,setLoading]=useState(true);
+  const {universalList,updateList}=useContext(CartContext); //List from the context function
+   
 
   useEffect(()=>{
     async function getProducts(){
@@ -21,9 +20,7 @@ export const Api = () => {
       } catch (error) {
         console.error(error);
       }
-      finally{
-        setLoading(false);
-      };
+      
     };
   
 
@@ -33,7 +30,7 @@ export const Api = () => {
   const [list,setList]=useState([]);
     
   useEffect(() => {
-    // Create a copy of mlist and wlist and add the count property as cannot modify immutable directly
+  
     const updatedMlist = mprolist.map(item => ({ ...item, count: 0 })); // Copy mlist
     const updatedWlist = wprolist.map(item => ({ ...item, count: 0 })); // Copy wlist
 
@@ -42,32 +39,24 @@ export const Api = () => {
 
   
     setList(combinedList);
+    console.log("List Made...")
     console.log(list);
+
     
   }, [mprolist, wprolist]);
+  useEffect(()=>{
+    if(list && list.length==10){
+      updateList(list);  //Giving the newmade list for the first time to the updateList function so that it can update the universal list
+      console.log("Universal List is updated: ",universalList);
+      setList(universalList); //set list here to the the universal list l 
+
+    }
   
 
-  return (
-    
-    <div>
-       
-        {loading? <Loader />
-        :
-        <>
-        <MainContext.Provider value={list}>
-        <Cart/>
-      </MainContext.Provider>
-         <Info
-         mlist={mprolist}
-         wlist={wprolist}
-         />
-         </>
-         }
-      </div>
-        
-    
-    
-  );
+  },[]);
+  return [mprolist,wprolist,list];
+  
+
 };
 
 

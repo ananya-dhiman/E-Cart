@@ -22,7 +22,23 @@ Checkout button
 Checkout Page 
 Thanks for shopping
 
+Fixes Needed-
+The updateList function is rerendering infinitely
+Header is empty
 
 
 
-
+Problem 1
+I need to export a object list to this page cart? 
+Best solution is to use useContext and then wrap the provider tag  around the whole rounter tag so that all components get access to the list (as it has all the information and for eg the hearder will also need this data)
+-Ok so I did some restructuring and made an api function that returns the list, so now I need the context to only keep pages 
+ updated with the count changes 
+-Can there be a solution without the context?
+    1) I need to update the list in the product page whenever a product is added to cart
+    2) Header needs to update the number of products 
+    3) Only list is the decider
+    4) Update on removal of product in Header 
+    
+Problem 2
+Done the above but now the updateList function is rerendering infinitely
+Header is empty
