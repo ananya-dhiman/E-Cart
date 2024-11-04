@@ -1,0 +1,27 @@
+
+.footer{
+    background-color: #242424;
+    width:100%;
+    display: flex;
+    flex-flow: column;
+    justify-content:flex-start;
+    color: #ffffff;
+    padding:20px;
+    height:30px;
+    font-size: 10px;
+    font-weight: 800;
+    max-width: 100%; 
+  
+  
+  }
+  .footer div{
+    padding:10px;
+  
+  }
+  .cen{
+    
+    font-size:15px;
+    position:relative;
+    left:45%;
+  }
+  

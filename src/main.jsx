@@ -8,8 +8,9 @@ import {
 import {Landing}  from './Landing'
 import { Product } from './Products'
 import { Cart } from './Cart'
-import { CartProvider } from './CartContext';
-import Api from './Api';
+import { CartProvider } from './Functions/CartContext';
+import Api from './Functions/Api';
+import { Checkout } from './Checkout';
 const router=createBrowserRouter([
   {
     path:"/",
@@ -23,6 +24,10 @@ const router=createBrowserRouter([
     path:"/cart",
     element:<Cart/>
   },
+  {
+    path:"/checkout",
+    element:<Checkout/>
+  }
  
 ]);
 

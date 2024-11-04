@@ -1,10 +1,10 @@
 import { useEffect, useState,useContext} from 'react';
-import Api from './Api';
+import Api from './Functions/Api';
 import { Header } from './Components/Header';
 import { Footer } from './Components/Footer';
 import {Info} from './Components/Info';
 import {Loader} from "./Components/Loader";
-import CartContext from "./CartContext";
+import CartContext from "./Functions/CartContext";
 
 export function Product(){
   console.log("Product Page renders");

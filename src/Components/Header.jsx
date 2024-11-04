@@ -1,7 +1,8 @@
 import { FaShoppingCart } from "react-icons/fa";
 import {useContext, useEffect} from "react";
-import CartContext from "../CartContext";
+import CartContext from "../Functions/CartContext";
 import { Link } from 'react-router-dom';
+import styles from "../styles/Header.module.css"
 
 export function Header(){
     console.log("Header Component Renders")
@@ -19,19 +20,19 @@ export function Header(){
     
     return (
         <>
-        <div className='header'>
+        <div className={styles.header} >
             
         
-        <h1>E-CART</h1>
-        <div className='left'>
+        <h1 className={styles.heading}>E-CART</h1>
+        <div className={styles.left}>
         <h1>Home</h1>
     
 
-        <Link to="/cart">
+        <Link to="/cart" className={styles.shopping}>
         <FaShoppingCart 
         style={style} />
         
-         <div className="count">{checkCount()}</div>
+         <div className={styles.count}>{checkCount()}</div>
         </Link>
         
        

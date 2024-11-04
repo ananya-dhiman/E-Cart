@@ -1,6 +1,6 @@
 import styles from "../styles/Info.module.css"
 import { useState,useEffect,createContext} from "react";
-import Api  from "../Api";
+import Api  from "../Functions/Api";
 import {Cart} from "../Cart";
 
 export const MainContext=createContext([]);

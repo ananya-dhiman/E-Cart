@@ -1,0 +1,53 @@
+
+.body {
+    overflow-x: hidden;
+  
+    padding:0;
+    margin:0;  
+   
+  }
+
+
+.back{
+  width:100%;
+
+  height:auto;
+
+  
+}
+a{
+  background-color: red;
+  text-align: center;
+  color: white;
+
+  font-size: 135px;
+  font-weight: 800;
+}
+  
+.a1{
+  
+  top: 65%;
+
+}
+.a2{
+  top: 75%;
+}
+.a3{
+  top: 85%;
+}
+
+.shop{
+  position:absolute;
+  background-color: #242424;
+  color: white;
+  border:none;
+  outline:none;
+  top: 80%;
+  left: 75%;
+  font-size: 50px;
+  font-weight: 800;
+  border-radius: 25px;
+  width:300px;
+  height:100px;
+  
+}

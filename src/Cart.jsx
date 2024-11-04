@@ -3,10 +3,11 @@ import { useState, useContext } from "react";
 import { Header } from "./Components/Header";
 import { Footer } from "./Components/Footer";
 import {Loader} from "./Components/Loader";
-import CartContext from "./CartContext";
-import Api from "./Api"
+import CartContext from "./Functions/CartContext";
+import Api from "./Functions/Api"
 import {Product} from "./Products"
 import { Link } from 'react-router-dom';
+import { Checkout } from "./Checkout";
 
 
 export function Cart(){
@@ -25,6 +26,10 @@ export function Cart(){
     const sub=(p)=>{
         p.count=p.count-1;
     }    
+    const done=()=>{
+        Api();
+
+    }
 
 
  
@@ -48,8 +53,9 @@ export function Cart(){
     <button onClick={()=> sub(avail)} className={styles.sub}>-</button>
 
     </div>
-    <button onClick={()=> check(avail)} className={styles.check}>Checkout</button>
-    
+    <Link to="/checkout">
+    <button onClick={()=> done()} className={styles.check}>Checkout</button>
+    </Link>
    
     </li>
     ))
