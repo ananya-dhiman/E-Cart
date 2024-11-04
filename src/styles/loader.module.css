@@ -7,8 +7,8 @@
   }
   
   .spinner {
-    border: 8px solid #f3f3f3; /* Light grey */
-    border-top: 8px solid green; /* Blue */
+    border: 8px solid #010a2b; /* Light grey */
+    border-top: 8px solid yellow; /* Blue */
     border-radius: 50%;
     width: 60px; /* Size of the spinner */
     height: 60px; /* Size of the spinner */

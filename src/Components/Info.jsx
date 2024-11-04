@@ -8,8 +8,8 @@ export const MainContext=createContext([]);
 
 export function Info({infoList,addToCart}){
   console.log("Info renders");
-  const OnStyle={backgroundColor:"green"};
-  const OffStyle={backgroundColor:"red"};
+  const OnStyle={backgroundColor:"rgb(1, 79, 1)"};
+  const OffStyle={backgroundColor:"#6f0606"};
   console.log("Info still running")
   console.log(infoList);
 
@@ -23,7 +23,7 @@ return(
   
  
    
-      <h2 className="heading">Men's Products</h2>
+      <h2 className={styles.heading}>Men's Products</h2>
       <ul>
         {infoList.map(product => ( product.category=="men's clothing"?
           
@@ -49,7 +49,7 @@ return(
         ))}
       </ul>
 
-      <h2 className="heading">Women's Products</h2>
+      <h2 className={styles.heading}>Women's Products</h2>
       <ul>
       {infoList.map(product => ( product.category=="women's clothing"?
           
