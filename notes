@@ -1,4 +1,4 @@
-Features
+## Features
 Product Page
 Product Card-
 Image
@@ -28,8 +28,10 @@ Header is empty
 
 
 
+## Problems
 Problem 1
 I need to export a object list to this page cart? 
+
 Best solution is to use useContext and then wrap the provider tag  around the whole rounter tag so that all components get access to the list (as it has all the information and for eg the hearder will also need this data)
 -Ok so I did some restructuring and made an api function that returns the list, so now I need the context to only keep pages 
  updated with the count changes 
@@ -42,3 +44,33 @@ Best solution is to use useContext and then wrap the provider tag  around the wh
 Problem 2
 Done the above but now the updateList function is rerendering infinitely
 Header is empty
+
+
+Problem 3
+The product page was not running after every reload and list was showing empty in info component a lot of times
+**Explaination-**
+
+```javascript
+export default function Api () { 
+  const [mprolist,setMprolist]=useState([]);
+  const [wprolist,setWprolist]=useState([]);
+  const {universalList,updateList}=useContext(CartContext); //List from the context function
+   
+
+  useEffect(()=>{
+    async function getProducts(){
+    try{
+        const menProducts=await fetchProducts("men's clothing");
+        setMprolist(menProducts);
+        
+        const womenProducts = await fetchProducts("women's clothing");
+        setWprolist(womenProducts);
+        const updatedMlist = mprolist.map(item => ({ ...item, count: 0,added:false })); // Copy mlist
+        const updatedWlist = wprolist.map(item => ({ ...item, count: 0,added:false})); // Copy wlist
+    
+```
+So here the problem is that we are running setMproList and setWproList after fetching men and women product,React sets schedule a state update. React acknowledges the update request but does not immediately change the state or re-render the component. The component re-renders after React processes all state updates (in the next render cycle).
+
+**But immediately after the set state line the mapping of the m and w prolist is done which maps over the yet to be updated m and w prolists as their update is scheduled for later and so often these lists are empty giving an empty list that goes as the universalList**
+
+

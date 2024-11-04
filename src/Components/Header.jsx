@@ -1,13 +1,20 @@
 import { FaShoppingCart } from "react-icons/fa";
-import {useContext} from "react";
+import {useContext, useEffect} from "react";
 import CartContext from "../CartContext";
 
 export function Header(){
+    console.log("Header Component Renders")
     
-    const {l,updateList}=useContext(CartContext);
+    const {universalList,updateList,c}=useContext(CartContext);
     const style = { color: "white", fontSize: "40px" }
-    console.log("header rendering due to changes in list");
-    console.log(l);
+    
+    console.log("Updating count value(Header)");
+   
+   
+       
+   
+
+    
     
     return (
         <>
@@ -23,10 +30,9 @@ export function Header(){
         <FaShoppingCart 
         style={style} />
         
-        {l && l.length>0? <div className="count">{l}</div>
-         :
-        <div className="count">0</div>
-        }
+         <div className="count">{c}</div>
+       
+        
        
      
         </div>

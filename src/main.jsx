@@ -9,7 +9,7 @@ import {Landing}  from './Landing'
 import { Product } from './Products'
 import { Cart } from './Cart'
 import { CartProvider } from './CartContext';
-import { Api } from './Api';
+import Api from './Api';
 const router=createBrowserRouter([
   {
     path:"/",
