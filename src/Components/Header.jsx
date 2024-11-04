@@ -1,11 +1,12 @@
 import { FaShoppingCart } from "react-icons/fa";
 import {useContext, useEffect} from "react";
 import CartContext from "../CartContext";
+import { Link } from 'react-router-dom';
 
 export function Header(){
     console.log("Header Component Renders")
     
-    const {universalList,updateList,c}=useContext(CartContext);
+    const {universalList,updateList,checkCount}=useContext(CartContext);
     const style = { color: "white", fontSize: "40px" }
     
     console.log("Updating count value(Header)");
@@ -26,12 +27,12 @@ export function Header(){
         <h1>Home</h1>
     
 
-        
+        <Link to="/cart">
         <FaShoppingCart 
         style={style} />
         
-         <div className="count">{c}</div>
-       
+         <div className="count">{checkCount()}</div>
+        </Link>
         
        
      

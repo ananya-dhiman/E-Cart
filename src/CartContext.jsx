@@ -5,7 +5,7 @@ const CartContext = createContext([]);
 
 
 export default CartContext;
-var c=0;
+
 export const CartProvider=({children})=>{
     
     const [universalList,setUniversalList]=useState([]);
@@ -13,18 +13,21 @@ export const CartProvider=({children})=>{
         console.log("Updating...");
         setUniversalList(incomingList);
         console.log("Update List-",universalList); 
-        c=0;
-        universalList.map(item=>{
-            c=c+item.count
-        })
-        console.log("Count checked: ",c);
+   
        
     
 
     };
+    function checkCount(){
+        var c=0;
+        universalList.map(item=>{
+            c=c+item.count
+        })
+        return c;
+    }
     
     return(
-        <CartContext.Provider value={{universalList,updateList,c}}>
+        <CartContext.Provider value={{universalList,updateList,checkCount}}>
             {children}
         </CartContext.Provider>
     )

@@ -1,15 +1,17 @@
 import styles from "./styles/Cart.module.css"
-import { useState,useEffect, useContext } from "react";
+import { useState, useContext } from "react";
 import { Header } from "./Components/Header";
 import { Footer } from "./Components/Footer";
 import {Loader} from "./Components/Loader";
 import CartContext from "./CartContext";
 import Api from "./Api"
+import {Product} from "./Products"
+import { Link } from 'react-router-dom';
 
 
 export function Cart(){
-    Api();
-   const {universalList,updateList}=useContext(CartContext);
+  
+   const {universalList,updateList,checkCount}=useContext(CartContext);
    const [loader,setLoader]=useState(true);
    console.log(universalList);
    const temp=universalList.filter(product =>product.count>0);
@@ -33,8 +35,9 @@ export function Cart(){
    
         <Header/>
         <div>CART</div>
-    
-    {temp?temp.map(avail=>(
+    {}
+
+    {temp && checkCount()>0?temp.map(avail=>(
     <li key={avail.id}>
     <div className={styles.item}>
     <img className={styles.i} src={avail.image} alt={avail.title} />
@@ -50,7 +53,16 @@ export function Cart(){
    
     </li>
     ))
-    :null
+    :
+
+    <div>
+        <div>The cart is empty</div> 
+        <Link to="/product">
+        <button> Shop Now </button>
+        </Link> 
+       
+    </div>   
+    
     }
   
         
