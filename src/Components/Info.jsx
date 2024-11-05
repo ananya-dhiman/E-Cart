@@ -23,7 +23,7 @@ return(
   
  
    
-      <h2 className={styles.heading}>Men's Products</h2>
+      <h2 className={styles.heading}>MEN'S PRODUCTS</h2>
       <ul>
         {infoList.map(product => ( product.category=="men's clothing"?
           
@@ -49,7 +49,7 @@ return(
         ))}
       </ul>
 
-      <h2 className={styles.heading}>Women's Products</h2>
+      <h2 className={styles.heading}>WOMENS'S PRODUCTS</h2>
       <ul>
       {infoList.map(product => ( product.category=="women's clothing"?
           

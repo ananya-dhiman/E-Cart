@@ -1,4 +1,5 @@
 import styles from "./styles/Cart.module.css"
+import { FaMinus,  FaPlus } from "react-icons/fa";
 import { useState, useContext } from "react";
 import { Header } from "./Components/Header";
 import { Footer } from "./Components/Footer";
@@ -8,6 +9,7 @@ import Api from "./Functions/Api"
 import {Product} from "./Products"
 import { Link } from 'react-router-dom';
 import { Checkout } from "./Checkout";
+import nothingImage from "./assets/nothing.png"
 
 
 export function Cart(){
@@ -16,16 +18,50 @@ export function Cart(){
    const [loader,setLoader]=useState(true);
    console.log(universalList);
    const temp=universalList.filter(product =>product.count>0);
+ 
+    
+    function totalPrice()
+    {
+        var price=0;
+        universalList.map(item=>{
+            if(item.count>0){
+                price=price+(item.price*item.count)
 
-       
+            }
+        }
+        )
+        
+        return price;
 
-    const addition=(p)=>{
-     p.count=p.count+1;
+    }       
+
+    const addition=(id)=>{
+        const temp=universalList.map(item=>{
+            if(item.id==id){
+                return{
+                    ...item,
+                    count:item.count+1
+                }
+            }
+            return item;
+        })
+
+        updateList(temp);
     }    
 
-    const sub=(p)=>{
-        p.count=p.count-1;
-    }    
+    const sub=(id)=>{
+        const temp=universalList.map(item=>{
+            if(item.id==id){
+                return{
+                    ...item,
+                    count:item.count-1
+                }
+            }
+            return item;
+        })
+        updateList(temp);
+    } 
+
     const done=()=>{
         Api();
 
@@ -39,32 +75,53 @@ export function Cart(){
        
    
         <Header/>
-        <div>CART</div>
-    {}
+        <h1 className={styles.heading}>CART</h1>
+    
 
-    {temp && checkCount()>0?temp.map(avail=>(
+    {temp && checkCount()>0?(
+    <>
+    {temp.map(avail=>(
     <li key={avail.id}>
     <div className={styles.item}>
     <img className={styles.i} src={avail.image} alt={avail.title} />
+    <div className={styles.detail}>
+    
     <a className={styles.name}>{avail.title}</a>
     <a className={styles.price}>${avail.price}</a>
-    <button onClick={()=> addition(avail)} className={styles.add}>+</button>
-    <div className={styles.c}>{avail.count}</div>
-    <button onClick={()=> sub(avail)} className={styles.sub}>-</button>
-
     </div>
-    <Link to="/checkout">
-    <button onClick={()=> done()} className={styles.check}>Checkout</button>
-    </Link>
+    <div className={styles.count}>
+    <FaMinus onClick={()=> sub(avail.id)} className={styles.sub}>-</FaMinus>
+  
+    <div className={styles.c}>{avail.count}</div>
+    <FaPlus onClick={()=> addition(avail.id)} className={styles.add}>+</FaPlus>
+    
+    </div>
+    </div>
+    
    
     </li>
-    ))
+
+
+    
+    ))}
+    
+    <div className={styles.final}>
+    <div className={styles.Tprice}>Total Price ${totalPrice()}</div>
+    <Link className={styles.Link} to="/checkout">
+    <button onClick={()=> done()} className={styles.check}>CHECKOUT</button>
+    </Link>
+    </div>
+    </>
+    
+    )
     :
 
     <div>
-        <div>The cart is empty</div> 
-        <Link to="/product">
-        <button> Shop Now </button>
+        <img className={styles.back} src={nothingImage} alt="Background" />
+
+        <div className={styles.message}>The cart is empty</div> 
+        <Link className={styles.Link} to="/product">
+        <button className={styles.check}> Shop Now </button>
         </Link> 
        
     </div>   
@@ -90,10 +147,3 @@ export function Cart(){
   
 
 
-
-/*
- <div>The cart is empty</div>  
-        <button> Shop Now </button>
-        <button onClick={()=> check(avail)} className={styles.check}>Checkout</button> 
-*/
- 

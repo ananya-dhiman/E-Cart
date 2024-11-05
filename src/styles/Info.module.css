@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Rubik+80s+Fade&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rubik+80s+Fade&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -13,12 +13,14 @@ body {
 
 .heading {
   text-align: center;
-  color: #2b0101; 
+  color: #010a2b; 
   margin-bottom: 20px;
-  font-size: 50px;
-  font-weight: 400;
-   font-style: normal;
-   font-family: "Rubik 80s Fade", system-ui;
+  font-size: 50Px;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  margin-botttom:40px;
 }
 
 ul {
@@ -28,6 +30,8 @@ ul {
   justify-content: center;
   align-items: center; 
   gap: 50px; 
+  margin-top:70px;
+  margin-bottom: 50px;
 }
 
 .card {

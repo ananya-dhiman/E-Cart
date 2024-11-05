@@ -1,5 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rubik+80s+Fade&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
 .body{
     margin: 0;
     padding:0;
     overflow-x:hidden;
+    color:#010a2b;
+    display:flex;
+    flex-flow:column;
+    justify-content: space-evenly;  
+    align-items: center;
+    gap:30px;
+}
+.heading{
+    text-align: center;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 50px;
+    font-weight: 700;
+    font-style: normal;
+    color:#010a2b;
+}
+
+.item{
+    padding:20px;
+    margin:auto;
+    background-color: black;
+    border-radius: 20px;
+    width:500px;
+    display: flex;
+    flex-flow:row;
+    justify-content: center;
+    gap:50px;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.i
+{
+    width:75px;
+    height: 100px;
+    border-radius: 20px;
+    align-self:flex-start;
+
+
+}
+.detail{
+    display:flex;
+    flex-flow:column;
+    justify-content:center;
+    align-items:center;
+    
+}
+.price{
+    align-self: flex-start;
+    color:#9af341;
+    font-weight: 300;
+}
+.count{
+    display:flex;
+    flex-flow:row;
+    justify-content: center;
+    align-content:center;
+    gap:20px;
+    text-align: center;
+    font-family: "Anton SC", serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 24px;
+    
+}
+.c{
+    align-self: center;
+    text-align:center;
+    color: #9af341;
+}
+
+.add,.sub{
+    width:30px;
+    height:30px;
+    text-align: center;
+    cursor:pointer;
+    align-self: center;
+    
+}
+
+.final{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-self:center;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+.Tprice{
+    margin:auto;
+    font-size: 50px;
+    padding:20px;
+    color: #010a2b;
+}
+.check{
+    margin:auto;
+    width:250px;
+    height:65px;
+    font-size: 20px;
+    background-color:#010a2b ;
+    border:none;
+    outline:none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    padding:10px;
+    border-radius: 20px;
+    color:#FFBF00;
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+.check:hover {
+    background-color:  #FFBF00;
+    color:#000000; /* Slightly darker for a hover effect */
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2); /* Prominent shadow */
+  }
+.Link{
+    text-decoration: none;
+    margin:auto;
+    display: flex;
+    justify-items: center;
+  }
+
+  
+.message{
+    margin:auto;
+    text-align: center;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 24px;
+    font-weight: 700;
+    font-style: normal;
+    color:#010a2b;
 }

@@ -1,6 +1,10 @@
+body{
+    background-color: #FFBF00;
+  
+}
 .checkoutContainer {
     text-align: center;
-    margin: 50px auto;
+    margin: 400px auto 400px auto;
     padding: 20px;
     max-width: 600px;
     background-color: #f9f9f9;
@@ -9,23 +13,32 @@
 }
 
 .thankYouMessage {
-    font-size: 24px;
+    font-size: 30px;
     font-weight: bold;
     margin-bottom: 20px;
+    color:#010a2b;
 }
-
-.returnButton {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #ff5757;
-    color: #fff;
+.returnButton{  margin:auto;
     text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: background-color 0.3s;
+    width:250px;
+    height:65px;
+    font-size: 20px;
+    background-color:#010a2b ;
+    border:none;
+    outline:none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    padding:10px;
+    border-radius: 20px;
+    color:#FFBF00;
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    font-style: normal;
 }
-
 .returnButton:hover {
-    background-color: #ff3c3c;
-}
+    background-color:  #FFBF00;
+    color:#000000; /* Slightly darker for a hover effect */
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2); /* Prominent shadow */
+  }
