@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rubik+80s+Fade&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
-body {
+.body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -20,10 +20,11 @@ body {
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
-  margin-botttom:40px;
+  margin-bottom:40px;
 }
 
 ul {
+  text-decoration: none;
   list-style: none;
   padding: 0;
   display: flex;

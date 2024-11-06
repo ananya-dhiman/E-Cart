@@ -25,8 +25,12 @@ export function Header(){
         
         <h1 className={styles.heading}>E-CART</h1>
         <div className={styles.left}>
-        <h1>Home</h1>
-    
+        <Link to="/">
+        <h1 className={styles.h1}>Home</h1>
+        </Link>
+        <Link to="/product">
+        <h1 className={styles.h1}>Products</h1>
+        </Link>
 
         <Link to="/cart" className={styles.shopping}>
         <FaShoppingCart 

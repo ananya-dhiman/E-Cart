@@ -4,13 +4,14 @@ export function Footer(){
 
     
     return (
-        <>
+        <div className={style.body}>
 <div className={style.footer}>
-<h1>Copyright 2024</h1>
-<div>Terms of Service</div>
-<div>Privacy </div>
-<div className={style.footer}>@ Odin Project 2024</div>
+
+<div className={style.same1}>Copyright 2024</div>
+<div className={style.same} >Terms of Service</div>
+<div className={style.same}>Privacy </div>
+<div className={style.cen}>@ Odin Project 2024</div>
 </div>
-</>
+</div>
     );
 }

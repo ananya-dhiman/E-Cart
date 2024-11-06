@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export function Checkout() {
     return (
-        <>
+        <div className={styles.body}>
             <Header />
             <div className={styles.checkoutContainer}>
                 <div className={styles.thankYouMessage}>
@@ -16,6 +16,6 @@ export function Checkout() {
                 </Link>
             </div>
             <Footer />
-        </>
+        </div>
     );
 }

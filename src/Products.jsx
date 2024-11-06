@@ -12,8 +12,13 @@ export function Product(){
   const {universalList,updateList}=useContext(CartContext);
   
     //Running api to get the final list which is updated to universal list
-     
     Api();
+    setTimeout(()=>{
+     
+      setLoading(false);
+
+    },2000);
+    
  
 
     useEffect(() => {

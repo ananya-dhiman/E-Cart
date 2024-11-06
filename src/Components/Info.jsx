@@ -19,7 +19,7 @@ export function Info({infoList,addToCart}){
     
 
 return(
-<div>
+<div class={styles.body}>
   
  
    

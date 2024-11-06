@@ -72,14 +72,16 @@ export function Cart(){
     
     return(
         <>
+        <div className={styles.whole}>
        
    
         <Header/>
-        <h1 className={styles.heading}>CART</h1>
+       
     
 
     {temp && checkCount()>0?(
     <>
+     <h1 className={styles.heading}>CART</h1>
     {temp.map(avail=>(
     <li key={avail.id}>
     <div className={styles.item}>
@@ -116,10 +118,11 @@ export function Cart(){
     )
     :
 
-    <div>
-        <img className={styles.back} src={nothingImage} alt="Background" />
+    <div className={styles.body}>
+        
+        <div className={styles.message}>THE CART IS EMPTY</div> 
+        <img className={styles.no} src={nothingImage} alt="Background" />
 
-        <div className={styles.message}>The cart is empty</div> 
         <Link className={styles.Link} to="/product">
         <button className={styles.check}> Shop Now </button>
         </Link> 
@@ -131,11 +134,11 @@ export function Cart(){
         
         
     
-        
+  </div>
+
             <Footer/>
     
-        </>
-
+      </>
     );
 
 };

@@ -1,10 +1,10 @@
-body{
+.body{
     background-color: #FFBF00;
   
 }
 .checkoutContainer {
     text-align: center;
-    margin: 400px auto 400px auto;
+    margin: 200px auto 200px auto;
     padding: 20px;
     max-width: 600px;
     background-color: #f9f9f9;
@@ -20,6 +20,7 @@ body{
 }
 .returnButton{  margin:auto;
     text-decoration: none;
+    padding:50px;
     width:250px;
     height:65px;
     font-size: 20px;

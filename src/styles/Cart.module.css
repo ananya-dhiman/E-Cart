@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rubik+80s+Fade&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
+.whole{
+    background-color: beige;
+}
+
 .body{
+    background-color:beige;
     margin: 0;
     padding:0;
     overflow-x:hidden;
@@ -21,7 +26,11 @@
     font-style: normal;
     color:#010a2b;
 }
+li{
+    text-decoration: none;
+    list-style: none;
 
+}
 .item{
     padding:20px;
     margin:auto;
@@ -104,9 +113,9 @@
     color: #010a2b;
 }
 .check{
-    margin:auto;
-    width:250px;
-    height:65px;
+    margin:50px auto 100px auto;
+    width:150px;
+    height:50px;
     font-size: 20px;
     background-color:#010a2b ;
     border:none;
@@ -136,12 +145,19 @@
 
   
 .message{
-    margin:auto;
+    margin:50px auto;
     text-align: center;
     font-family: "Oswald", sans-serif;
     font-optical-sizing: auto;
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 700;
     font-style: normal;
     color:#010a2b;
+}
+.no{
+    margin:auto;
+    display: flex;
+    justify-content: center;
+    height:300px;
+    width:auto;
 }
